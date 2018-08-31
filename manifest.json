@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "IRL",
+  "version": "1.0",
+  "description": "Bring your social media activism into reality!",
+  "content_scripts": 
+  [
+    {
+      "matches": ["https://www.facebook.com/*", "http://www.facebook.com/*" ,"https://www.recode.net/*",
+        "https://en.wikipedia.org/*", "https://twitter.com/*", "https://www.instagram.com/*"],
+      "js": ["jquery-2.2.4.min.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_icon": "Active.png",
+    "default_title": "Get Active!",
+    "default_popup": "browser_action.html"
+  },
+  "icons": { 
+    "32": "BLM32.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "geolocation",
+    "tabs"
+  ]
+}
